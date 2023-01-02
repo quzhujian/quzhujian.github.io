@@ -1,69 +1,101 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv=”refresh” content=”5;url=’https://www.cnblogs.com/tianji73/’” > -->
+    <title>测试页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+        }
+        a {
+            position: relative;
+            width: 100px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            margin: 45px;
+            text-decoration: none;
+            color: aqua;
+            font-size: 20px;
+            padding: 0 20px;
+            text-transform: uppercase;
+            transition: 0.5s;
+            overflow: hidden;
+            -webkit-box-reflect: below 1px linear-gradient(transparent, #1113);
+        }
+        a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-top: 2px solid aqua;
+            border-left: 2px solid aqua;
+            transition: 0.5s;
+            transition-delay: 0.5s;
+        }
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            border-bottom: 2px solid aqua;
+            border-right: 2px solid aqua;
+            transition: 0.5s;
+            transition-delay: 0.5s;
+        }
+        a:hover::before, a:hover::after {
+            width: 100%;
+            height: 100%;
+            transition-delay: 0s;
+        }
+        a:hover {
+            background-color: aqua;
+            color: #000;
+            box-shadow: 0 0 50px #21ebff;
+            transition-delay: 0.3s;
+        }
+        a:nth-child(1) {
+            filter: hue-rotate(150deg);
+        }
+        a:nth-child(3) {
+            filter: hue-rotate(270deg);
+        }
+        a:nth-child(4) {
+            filter: hue-rotate(400deg);
+        }
+        a:nth-child(5) {
+            filter: hue-rotate(70deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="https://www.cnblogs.com/tianji73/">简介说明</a>
+        <a href="#">科技库</a>
+        <a href="#">文学库</a>
+        <a href="#">艺术库</a>
+        <a href="#">影音库</a>
+    </div>
+    <!-- <script type="text/javascript">
 
-<!-- about.html -->
-      <div class="post">
-        <header class="post-header">
-              <h1>天基系统正式开始搭建</h1>
-              <a href="https://www.cnblogs.com/tianji73/">天基系统超链接</a>
-              <h2>站在巨人的肩膀上</h2>
-          <h1 class="post-title">
-           {% if site.title == "blank" -%}<span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}{%- else -%}{{ site.title }}{%- endif %}
-          </h1>
-          <p class="desc">{{ page.subtitle }}</p>
-        </header>
-
-        <article>
-          {% if page.profile -%}
-          <div class="profile float-{%- if page.profile.align == 'left' -%}left{%- else -%}right{%- endif -%}">
-            {%- if page.profile.image %}
-              {%- assign profile_image_path = page.profile.image | prepend: 'assets/img/' -%}
-
-              {% if page.profile.image_circular %}
-                {%- assign profile_image_class = "img-fluid z-depth-1 rounded-circle" -%}
-              {% else %}
-                {%- assign profile_image_class = "img-fluid z-depth-1 rounded" -%}
-              {% endif %}
-
-              {% include figure.html 
-              path=profile_image_path 
-              class=profile_image_class
-              alt=page.profile.image -%}
-            {% endif -%}
-            {%- if page.profile.address %}
-            <div class="address">
-              {{ page.profile.address }}
-            </div>
-            {%- endif %}
-          </div>
-          {%- endif %}
-
-          <div class="clearfix">
-            {{ content }}
-          </div>
-
-          {% if page.news -%}
-          <!-- News -->
-          {%- include news.html %}
-          {%- endif %}
-          {% if page.selected_papers -%}
-            <!-- Selected papers -->
-            {%- include selected_papers.html %}
-          {%- endif %}
-          {%- if page.social %}
-          <!-- Social -->
-          <div class="social">
-            <div class="contact-icons">
-            {% include social.html %}
-            </div>
-
-            <div class="contact-note">
-              {{ site.contact_note }}
-            </div>
-            
-          </div>
-          {%- endif %}
-        </article>
-
-</div>
+        　　setTimeout("window.location=('index.php'",9000);
+        
+        </script> -->
+</body>
+</html>
